@@ -1,98 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: #050510;
-    font-family: "Arial", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-  }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ارتباط با من</title>
 
-  .container {
-    width: 90%;
-    max-width: 480px;
-    background: rgba(0, 0, 0, 0.45);
-    border-radius: 20px;
-    padding: 32px;
-    text-align: center;
-    backdrop-filter: blur(20px);
-    animation: fadeUp 1.3s ease-out forwards;
-    opacity: 0;
-  }
+    <!-- فونت ایران سنس (مثال) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet" />
 
-  @keyframes fadeUp {
-    0% { opacity: 0; transform: translateY(60px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
+    <!-- آیکون‌های رسمی شبکه‌های اجتماعی از FontAwesome -->
+    <!-- Font Awesome official brand icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-ka7Sk0Gln4qmlEUGTnpRPi0u9Hb7U7N4qRIBq2Yx0F6Sr4rYSLyO4i3p0Zsb0VG7KkJ9GQ1f5DCE3Ogr6K8wUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  h1 {
-    font-size: 2rem;
-    color: #fff;
-    text-shadow: 0 0 12px #00fff9;
-    margin-bottom: 18px;
-  }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  .item {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 14px 18px;
-    margin-bottom: 14px;
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    transition: 0.3s;
-  }
-  .item:hover {
-    background: #00fff980;
-    box-shadow: 0 0 20px #00fff9;
-    cursor: pointer;
-  }
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #0a0f1f;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-  a { text-decoration: none; color: inherit; }
+        .contact-container {
+            width: 90%;
+            max-width: 900px;
+            background: rgba(10, 10, 25, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid rgba(0, 255, 255, 0.6);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+            animation: fadeInUp 1.3s ease;
+        }
 
-  .neon-bg {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    filter: blur(100px);
-    z-index: -1;
-    animation: float 6s infinite alternate ease-in-out;
-  }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-  @keyframes float {
-    from { transform: translateY(-60px); }
-    to { transform: translateY(60px); }
-  }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #00eaff;
+            text-shadow: 0 0 10px #00eaff;
+        }
 
-  .pink { background: #ff00e6; top: 10%; left: 15%; }
-  .cyan { background: #00fff9; bottom: 10%; right: 15%; }
+        .social-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-</style>
+        .social-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 255, 0.4);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .social-item:hover {
+            background: rgba(0, 255, 255, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+        }
+
+        .social-item i {
+            font-size: 28px;
+            margin-left: 20px;
+            color: #00eaff;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        @media(max-width: 600px) {
+            h2 { font-size: 1.6rem; }
+            a { font-size: 1rem; }
+        }
+    </style>
 </head>
 <body>
+    <div class="contact-container">
+        <h2>ارتباط با من</h2>
+        <div class="social-list">
 
-  <div class="neon-bg pink"></div>
-  <div class="neon-bg cyan"></div>
+            <a href="https://instagram.com/" target="_blank" class="social-item">
+                <i class="fab fa-instagram"></i>
+                اینستاگرام
+            </a>
 
-  <div class="container">
-    <h1>CONTACT ME</h1>
+            <a href="https://t.me/" target="_blank" class="social-item">
+                <i class="fab fa-telegram"></i>
+                تلگرام
+            </a>
 
-    <div class="item">📞 <a href="tel:+123456789">+123-456-789</a></div>
-    <div class="item">✉️ <a href="mailto:example@email.com">example@email.com</a></div>
-    <div class="item">🌐 <a href="https://github.com/YOUR_GITHUB" target="_blank">github.com/YOUR_GITHUB</a></div>
-    <div class="item">💼 <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">linkedin.com/in/YOUR_LINKEDIN</a></div>
-  </div>
+            <a href="https://linkedin.com/" target="_blank" class="social-item">
+                <i class="fab fa-linkedin"></i>
+                لینکدین
+            </a>
 
+            <a href="https://github.com/" target="_blank" class="social-item">
+                <i class="fab fa-github"></i>
+                گیت هاب
+            </a>
+
+            <a href="#" target="_blank" class="social-item">
+                <i class="fas fa-globe"></i>
+                سایت شخصی
+            </a>
+
+        </div>
+    </div>
 </body>
 </html>
