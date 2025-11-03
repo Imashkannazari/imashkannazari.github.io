@@ -1,195 +1,98 @@
 <!DOCTYPE html>
-
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تماس با ما</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #050510;
+    font-family: "Arial", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-```
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
+  .container {
+    width: 90%;
+    max-width: 480px;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 20px;
+    padding: 32px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    animation: fadeUp 1.3s ease-out forwards;
+    opacity: 0;
+  }
 
-    .header {
-        background: rgba(15, 25, 45, 0.9);
-        padding: 60px 20px;
-        text-align: center;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(60px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
 
-    .title {
-        color: #ffffff;
-        font-size: 48px;
-        font-weight: 700;
-        margin-bottom: 15px;
-    }
+  h1 {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 12px #00fff9;
+    margin-bottom: 18px;
+  }
 
-    .subtitle {
-        color: #b0c4de;
-        font-size: 18px;
-        max-width: 700px;
-        margin: 0 auto;
-        line-height: 1.6;
-    }
+  .item {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: 0.3s;
+  }
+  .item:hover {
+    background: #00fff980;
+    box-shadow: 0 0 20px #00fff9;
+    cursor: pointer;
+  }
 
-    .main-content {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 40px 20px;
-    }
+  a { text-decoration: none; color: inherit; }
 
-    .contact-container {
-        width: 100%;
-        max-width: 1200px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-    }
+  .neon-bg {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+    animation: float 6s infinite alternate ease-in-out;
+  }
 
-    .contact-card {
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 15px;
-        padding: 35px;
-        text-align: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    }
+  @keyframes float {
+    from { transform: translateY(-60px); }
+    to { transform: translateY(60px); }
+  }
 
-    .contact-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    }
+  .pink { background: #ff00e6; top: 10%; left: 15%; }
+  .cyan { background: #00fff9; bottom: 10%; right: 15%; }
 
-    .icon {
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(135deg, #2196F3, #1976D2);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 25px;
-    }
-
-    .icon svg {
-        width: 40px;
-        height: 40px;
-        fill: white;
-    }
-
-    .contact-title {
-        color: #1e3c72;
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 15px;
-    }
-
-    .contact-text {
-        color: #333;
-        font-size: 16px;
-        direction: ltr;
-        word-break: break-word;
-    }
-
-    .footer {
-        background: rgba(15, 25, 45, 0.9);
-        padding: 25px;
-        text-align: center;
-        color: #b0c4de;
-        font-size: 14px;
-    }
-
-    @media (max-width: 768px) {
-        .title {
-            font-size: 32px;
-        }
-
-        .subtitle {
-            font-size: 16px;
-        }
-
-        .contact-container {
-            grid-template-columns: 1fr;
-        }
-
-        .header {
-            padding: 40px 20px;
-        }
-    }
 </style>
-```
-
 </head>
 <body>
-    <div class="header">
-        <h1 class="title">تماس با ما</h1>
-        <p class="subtitle">
-            ما همیشه آماده پاسخگویی به سوالات شما هستیم. از طریق راه‌های ارتباطی زیر با ما در تماس باشید.
-        </p>
-    </div>
 
-```
-<div class="main-content">
-    <div class="contact-container">
-        <div class="contact-card">
-            <div class="icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                </svg>
-            </div>
-            <h3 class="contact-title">تلفن</h3>
-            <p class="contact-text">+98 912 345 6789</p>
-        </div>
+  <div class="neon-bg pink"></div>
+  <div class="neon-bg cyan"></div>
 
-        <div class="contact-card">
-            <div class="icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-            </div>
-            <h3 class="contact-title">ایمیل</h3>
-            <p class="contact-text">info@yourcompany.com</p>
-        </div>
+  <div class="container">
+    <h1>CONTACT ME</h1>
 
-        <div class="contact-card">
-            <div class="icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                </svg>
-            </div>
-            <h3 class="contact-title">وبسایت</h3>
-            <p class="contact-text">www.yourcompany.com</p>
-        </div>
-
-        <div class="contact-card">
-            <div class="icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-            </div>
-            <h3 class="contact-title">آدرس</h3>
-            <p class="contact-text">تهران، خیابان ولیعصر، پلاک ۱۲۳</p>
-        </div>
-    </div>
-</div>
-
-<div class="footer">
-    © ۲۰۲۵ تمامی حقوق محفوظ است | آماده همکاری با شما هستیم
-</div>
-```
+    <div class="item">📞 <a href="tel:+123456789">+123-456-789</a></div>
+    <div class="item">✉️ <a href="mailto:example@email.com">example@email.com</a></div>
+    <div class="item">🌐 <a href="https://github.com/YOUR_GITHUB" target="_blank">github.com/YOUR_GITHUB</a></div>
+    <div class="item">💼 <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">linkedin.com/in/YOUR_LINKEDIN</a></div>
+  </div>
 
 </body>
 </html>
