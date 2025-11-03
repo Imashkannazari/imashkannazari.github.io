@@ -15,312 +15,118 @@
 ```
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(to bottom, #0a0e27, #1a1f3a, #0f1729);
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
         min-height: 100vh;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        position: relative;
-        overflow-x: hidden;
-    }
-
-    body::before {
-        content: '';
-        position: absolute;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, rgba(0, 123, 255, 0.15) 0%, transparent 70%);
-        top: -200px;
-        right: -200px;
-        border-radius: 50%;
-        animation: pulse 8s ease-in-out infinite;
-    }
-
-    body::after {
-        content: '';
-        position: absolute;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, rgba(0, 174, 255, 0.1) 0%, transparent 70%);
-        bottom: -150px;
-        left: -150px;
-        border-radius: 50%;
-        animation: pulse 6s ease-in-out infinite reverse;
-    }
-
-    @keyframes pulse {
-        0%, 100% { transform: scale(1); opacity: 0.5; }
-        50% { transform: scale(1.2); opacity: 0.8; }
-    }
-
-    .stars {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-    }
-
-    .star {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 50%;
-        animation: twinkle 3s ease-in-out infinite;
-    }
-
-    @keyframes twinkle {
-        0%, 100% { opacity: 0.3; }
-        50% { opacity: 1; }
-    }
-
-    .container {
-        background: rgba(15, 23, 42, 0.95);
-        backdrop-filter: blur(20px);
-        border-radius: 30px;
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 
-                    0 0 1px rgba(0, 174, 255, 0.5);
-        max-width: 900px;
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-        z-index: 10;
-        border: 1px solid rgba(0, 174, 255, 0.2);
-    }
-
-    .glow-line {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, 
-            transparent 0%, 
-            #007bff 25%, 
-            #00aeff 50%, 
-            #007bff 75%, 
-            transparent 100%);
-        animation: shimmer 3s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
+        flex-direction: column;
     }
 
     .header {
-        background: linear-gradient(135deg, #0f1729 0%, #1a2332 100%);
-        padding: 80px 40px 60px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-            radial-gradient(circle at 20% 50%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 50%, rgba(0, 174, 255, 0.1) 0%, transparent 50%);
-    }
-
-    .title-wrapper {
-        position: relative;
-        z-index: 2;
+        background: rgba(15, 25, 45, 0.9);
+        padding: 60px 20px;
         text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
     .title {
         color: #ffffff;
-        font-size: 56px;
-        font-weight: 800;
-        letter-spacing: 4px;
-        margin-bottom: 20px;
-        text-shadow: 0 0 30px rgba(0, 174, 255, 0.5),
-                     0 0 60px rgba(0, 123, 255, 0.3);
-        animation: titleGlow 3s ease-in-out infinite;
-    }
-
-    @keyframes titleGlow {
-        0%, 100% { text-shadow: 0 0 30px rgba(0, 174, 255, 0.5), 0 0 60px rgba(0, 123, 255, 0.3); }
-        50% { text-shadow: 0 0 40px rgba(0, 174, 255, 0.8), 0 0 80px rgba(0, 123, 255, 0.5); }
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 15px;
     }
 
     .subtitle {
-        color: #94a3b8;
+        color: #b0c4de;
         font-size: 18px;
-        line-height: 1.8;
-        max-width: 600px;
+        max-width: 700px;
         margin: 0 auto;
+        line-height: 1.6;
     }
 
-    .divider {
-        width: 100px;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, #007bff, transparent);
-        margin: 30px auto;
-        border-radius: 3px;
-    }
-
-    .content {
-        padding: 60px 40px;
-        position: relative;
-    }
-
-    .contact-grid {
-        display: grid;
-        gap: 25px;
-    }
-
-    .contact-item {
-        background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(26, 35, 50, 0.8) 100%);
-        border: 1px solid rgba(0, 123, 255, 0.2);
-        border-radius: 20px;
-        padding: 30px;
-        display: flex;
-        align-items: center;
-        gap: 25px;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .contact-item::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, 
-            transparent, 
-            rgba(0, 174, 255, 0.1), 
-            transparent);
-        transition: left 0.5s ease;
-    }
-
-    .contact-item:hover::before {
-        left: 100%;
-    }
-
-    .contact-item:hover {
-        transform: translateY(-5px);
-        border-color: #00aeff;
-        box-shadow: 0 20px 40px rgba(0, 123, 255, 0.3),
-                    0 0 20px rgba(0, 174, 255, 0.2);
-        background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(26, 35, 50, 0.95) 100%);
-    }
-
-    .icon-wrapper {
-        width: 70px;
-        height: 70px;
-        background: linear-gradient(135deg, #007bff 0%, #00aeff 100%);
-        border-radius: 18px;
+    .main-content {
+        flex: 1;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-shrink: 0;
-        position: relative;
-        box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4);
+        padding: 40px 20px;
     }
 
-    .icon-wrapper::before {
-        content: '';
-        position: absolute;
-        inset: -2px;
-        background: linear-gradient(135deg, #00aeff, #007bff);
-        border-radius: 20px;
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 0.3s ease;
+    .contact-container {
+        width: 100%;
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
     }
 
-    .contact-item:hover .icon-wrapper::before {
-        opacity: 1;
+    .contact-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 35px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     }
 
-    .icon-wrapper svg {
-        width: 32px;
-        height: 32px;
+    .contact-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #2196F3, #1976D2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+    }
+
+    .icon svg {
+        width: 40px;
+        height: 40px;
         fill: white;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     }
 
-    .contact-info {
-        flex: 1;
-    }
-
-    .contact-label {
-        color: #64748b;
-        font-size: 13px;
+    .contact-title {
+        color: #1e3c72;
+        font-size: 20px;
         font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 8px;
+        margin-bottom: 15px;
     }
 
     .contact-text {
-        color: #e2e8f0;
-        font-size: 20px;
-        font-weight: 500;
+        color: #333;
+        font-size: 16px;
         direction: ltr;
-        text-align: left;
+        word-break: break-word;
     }
 
-    .footer-note {
+    .footer {
+        background: rgba(15, 25, 45, 0.9);
+        padding: 25px;
         text-align: center;
-        color: #475569;
+        color: #b0c4de;
         font-size: 14px;
-        margin-top: 40px;
-        padding-top: 30px;
-        border-top: 1px solid rgba(71, 85, 105, 0.3);
     }
 
     @media (max-width: 768px) {
         .title {
-            font-size: 36px;
-        }
-
-        .content {
-            padding: 40px 20px;
-        }
-
-        .contact-item {
-            padding: 20px;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .contact-text {
-            text-align: center;
-            font-size: 16px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .header {
-            padding: 60px 20px 40px;
-        }
-
-        .title {
-            font-size: 28px;
-            letter-spacing: 2px;
+            font-size: 32px;
         }
 
         .subtitle {
-            font-size: 14px;
+            font-size: 16px;
+        }
+
+        .contact-container {
+            grid-template-columns: 1fr;
+        }
+
+        .header {
+            padding: 40px 20px;
         }
     }
 </style>
@@ -328,101 +134,61 @@
 
 </head>
 <body>
-    <div class="stars">
-        <div class="star" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
-        <div class="star" style="top: 20%; left: 80%; animation-delay: 0.5s;"></div>
-        <div class="star" style="top: 40%; left: 30%; animation-delay: 1s;"></div>
-        <div class="star" style="top: 60%; left: 70%; animation-delay: 1.5s;"></div>
-        <div class="star" style="top: 80%; left: 40%; animation-delay: 2s;"></div>
-        <div class="star" style="top: 30%; left: 60%; animation-delay: 2.5s;"></div>
-        <div class="star" style="top: 70%; left: 15%; animation-delay: 3s;"></div>
-        <div class="star" style="top: 50%; left: 85%; animation-delay: 3.5s;"></div>
+    <div class="header">
+        <h1 class="title">تماس با ما</h1>
+        <p class="subtitle">
+            ما همیشه آماده پاسخگویی به سوالات شما هستیم. از طریق راه‌های ارتباطی زیر با ما در تماس باشید.
+        </p>
     </div>
 
 ```
-<div class="container">
-    <div class="glow-line"></div>
-    
-    <div class="header">
-        <div class="title-wrapper">
-            <h1 class="title">تماس با ما</h1>
-            <div class="divider"></div>
-            <p class="subtitle">
-                ما همیشه آماده پاسخگویی به سوالات شما هستیم<br>
-                از طریق راه‌های ارتباطی زیر می‌توانید با ما در ارتباط باشید
-            </p>
-        </div>
-    </div>
-
-    <div class="content">
-        <div class="contact-grid">
-            <div class="contact-item">
-                <div class="icon-wrapper">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                    </svg>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">تلفن تماس</div>
-                    <div class="contact-text">+98 912 345 6789</div>
-                </div>
+<div class="main-content">
+    <div class="contact-container">
+        <div class="contact-card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
             </div>
-
-            <div class="contact-item">
-                <div class="icon-wrapper">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">ایمیل</div>
-                    <div class="contact-text">info@yourcompany.com</div>
-                </div>
-            </div>
-
-            <div class="contact-item">
-                <div class="icon-wrapper">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                    </svg>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">وبسایت</div>
-                    <div class="contact-text">www.yourcompany.com</div>
-                </div>
-            </div>
-
-            <div class="contact-item">
-                <div class="icon-wrapper">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                    </svg>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">آدرس</div>
-                    <div class="contact-text">تهران، خیابان ولیعصر، پلاک ۱۲۳</div>
-                </div>
-            </div>
+            <h3 class="contact-title">تلفن</h3>
+            <p class="contact-text">+98 912 345 6789</p>
         </div>
 
-        <div class="footer-note">
-            آماده همکاری و ارائه بهترین خدمات به شما هستیم
+        <div class="contact-card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+            </div>
+            <h3 class="contact-title">ایمیل</h3>
+            <p class="contact-text">info@yourcompany.com</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+            </div>
+            <h3 class="contact-title">وبسایت</h3>
+            <p class="contact-text">www.yourcompany.com</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+            </div>
+            <h3 class="contact-title">آدرس</h3>
+            <p class="contact-text">تهران، خیابان ولیعصر، پلاک ۱۲۳</p>
         </div>
     </div>
 </div>
 
-<script>
-    // اضافه کردن ستاره‌های بیشتر به صورت دینامیک
-    const starsContainer = document.querySelector('.stars');
-    for (let i = 0; i < 50; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        star.style.top = Math.random() * 100 + '%';
-        star.style.left = Math.random() * 100 + '%';
-        star.style.animationDelay = Math.random() * 3 + 's';
-        starsContainer.appendChild(star);
-    }
-</script>
+<div class="footer">
+    © ۲۰۲۵ تمامی حقوق محفوظ است | آماده همکاری با شما هستیم
+</div>
 ```
 
 </body>
